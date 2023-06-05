@@ -19,7 +19,7 @@ import "../global/global.dart";
 
       startTimer()
       {
-        Timer(const Duration(seconds: 3), () async
+        Timer(const Duration(seconds: 2), () async
         {
           if(await fAuth.currentUser != null)
             {
