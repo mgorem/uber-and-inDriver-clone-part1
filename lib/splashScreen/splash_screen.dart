@@ -5,6 +5,8 @@ import "package:drivers_app/authentication/signup_screen.dart";
 import "package:drivers_app/mainScreens/main_screen.dart";
 import "package:flutter/material.dart";
 
+import "../global/global.dart";
+
     class MySplashScreen extends StatefulWidget {
       const MySplashScreen({Key? key}) : super(key: key);
 
@@ -17,9 +19,19 @@ import "package:flutter/material.dart";
 
       startTimer()
       {
-        Timer(const Duration(seconds: 3), () async {
-          // send user to main screen
-          Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
+        Timer(const Duration(seconds: 3), () async
+        {
+          if(await fAuth.currentUser != null)
+            {
+              currentFirebaseUser = fAuth.currentUser;
+              // send user to main screen
+              Navigator.push(context, MaterialPageRoute(builder: (c)=> MainScreen()));
+            }
+          else
+            {
+              // send user to login screen
+              Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
+            }
         });
       }
 
