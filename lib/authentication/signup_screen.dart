@@ -1,4 +1,5 @@
 import 'package:drivers_app/authentication/car_info_screen.dart';
+import 'package:drivers_app/authentication/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget
@@ -28,8 +29,8 @@ class _SignUpScreenState extends State<SignUpScreen>
               const SizedBox(height: 10,),
 
               Padding(
-                padding: const EdgeInsets.all(20.0),
-              child: Image.asset("images/logo1.png")
+                  padding: const EdgeInsets.all(20.0),
+                  child: Image.asset("images/logo1.png"),
               ),
 
               const SizedBox(height: 10,),
@@ -168,6 +169,19 @@ class _SignUpScreenState extends State<SignUpScreen>
                       fontSize: 18,
                     ),
                   ),
+              ),
+
+              TextButton(
+                child: const Text(
+                  "Already have an account? Login here",
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+                onPressed: ()
+                {
+                  Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
+                },
               ),
 
             ],

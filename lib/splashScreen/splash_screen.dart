@@ -1,5 +1,6 @@
 import "dart:async";
 
+import "package:drivers_app/authentication/login_screen.dart";
 import "package:drivers_app/authentication/signup_screen.dart";
 import "package:drivers_app/mainScreens/main_screen.dart";
 import "package:flutter/material.dart";
@@ -18,7 +19,7 @@ import "package:flutter/material.dart";
       {
         Timer(const Duration(seconds: 3), () async {
           // send user to main screen
-          Navigator.push(context, MaterialPageRoute(builder: (c)=> SignUpScreen()));
+          Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
         });
       }
 
